@@ -1,0 +1,34 @@
+package com.codenguyenvu.helloworld.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "loaihang")
+public class LoaiHang {
+    @Id
+    @Column(name = "maLoai")
+    private String maLoai;
+    @Column(name = "tenLoai")
+    private String tenLoaiHang;
+
+    public LoaiHang(String maLoai, String tenLoaiHang) {
+        this.maLoai = maLoai;
+        this.tenLoaiHang = tenLoaiHang;
+    }
+
+    public String getMaLoai() {
+        return maLoai;
+    }
+
+    public void setMaLoai(String maLoai) {
+        this.maLoai = maLoai;
+    }
+
+    public String getTenLoaiHang() {
+        return tenLoaiHang;
+    }
+
+    public void setTenLoaiHang(String tenLoaiHang) {
+        this.tenLoaiHang = tenLoaiHang;
+    }
+}

@@ -1,0 +1,23 @@
+package com.codenguyenvu.helloworld.database;
+
+import com.codenguyenvu.helloworld.entity.HangHoa;
+import com.codenguyenvu.helloworld.usecase.interfaces.DatabaseBoundary;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class GetAllProductListMysql implements DatabaseBoundary {
+    private HangHoaRepository hangHoaRepository;
+
+    @Autowired
+    public GetAllProductListMysql(HangHoaRepository hangHoaRepository) {
+        this.hangHoaRepository = hangHoaRepository;
+    }
+
+    public List<HangHoa> getAllProductList() {
+        return hangHoaRepository.findAll();
+    }
+}

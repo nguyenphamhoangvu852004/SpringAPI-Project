@@ -1,0 +1,24 @@
+package com.codenguyenvu.helloworld;
+
+import com.codenguyenvu.helloworld.usecase.GetAllProductListUseCase;
+import com.codenguyenvu.helloworld.usecase.interfaces.InputBoundary;
+import com.codenguyenvu.helloworld.usecase.interfaces.OutputBoundary;
+import com.codenguyenvu.helloworld.usecase.interfaces.ResponseData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+    private InputBoundary getAllProductListUseCase;
+    @Autowired
+    public Controller(InputBoundary getAllProductListUseCase) {
+        this.getAllProductListUseCase = getAllProductListUseCase;
+    }
+
+    @GetMapping("/hello")
+    public ResponseData hello() {
+        getAllProductListUseCase.execute(null);
+        return (ResponseData) getAllProductListUseCase.getResponseData();
+    }
+}
