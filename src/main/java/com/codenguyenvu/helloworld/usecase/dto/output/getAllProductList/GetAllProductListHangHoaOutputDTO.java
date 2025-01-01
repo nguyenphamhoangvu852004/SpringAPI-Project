@@ -1,18 +1,23 @@
-package com.codenguyenvu.helloworld.ui;
+package com.codenguyenvu.helloworld.usecase.dto.output.getAllProductList;
 
-public class GetAllProductListViewModel {
+public class GetAllProductListHangHoaOutputDTO {
     private String maHang;
     private String tenHang;
-    private String soLuongTon;
-    private String donGia;
+    private int soLuongTon;
+    private double donGia;
     private String maLoai;
+    private String tenLoai;
 
-    public GetAllProductListViewModel(String maHang, String tenHang, String soLuongTon, String donGia, String maLoai) {
+    public GetAllProductListHangHoaOutputDTO() {
+
+    }
+    public GetAllProductListHangHoaOutputDTO(String maHang, String tenHang, int soLuongTon, double donGia, String maLoai, String tenLoai) {
         this.maHang = maHang;
         this.tenHang = tenHang;
         this.soLuongTon = soLuongTon;
         this.donGia = donGia;
         this.maLoai = maLoai;
+        this.tenLoai = tenLoai;
     }
 
     public String getMaHang() {
@@ -31,19 +36,19 @@ public class GetAllProductListViewModel {
         this.tenHang = tenHang;
     }
 
-    public String getSoLuongTon() {
+    public int getSoLuongTon() {
         return soLuongTon;
     }
 
-    public void setSoLuongTon(String soLuongTon) {
+    public void setSoLuongTon(int soLuongTon) {
         this.soLuongTon = soLuongTon;
     }
 
-    public String getDonGia() {
+    public double getDonGia() {
         return donGia;
     }
 
-    public void setDonGia(String donGia) {
+    public void setDonGia(double donGia) {
         this.donGia = donGia;
     }
 
@@ -53,5 +58,13 @@ public class GetAllProductListViewModel {
 
     public void setMaLoai(String maLoai) {
         this.maLoai = maLoai;
+    }
+
+    public String getTenLoai() {
+        return tenLoai;
+    }
+
+    public void setTenLoai(String tenLoai) {
+        this.tenLoai = tenLoai;
     }
 }

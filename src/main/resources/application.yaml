@@ -7,20 +7,14 @@ spring:
     username: root
     password: nguyenvu
   jpa:
-    hibernate:
-      naming:
-        physical-strategy: com.codenguyenvu.helloworld.helpers.LowerCaseNamingStrategy
-jpa:
-  hibernate:
-    ddl-auto: update
     show-sql: true
+    hibernate:
+      ddl-auto: update
+  main:
+    banner-mode: "off"
 
 logging:
   level:
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql: TRACE
-
+    root: warn  
+  
+  

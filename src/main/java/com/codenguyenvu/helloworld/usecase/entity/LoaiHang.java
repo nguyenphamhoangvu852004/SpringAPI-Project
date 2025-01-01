@@ -1,4 +1,4 @@
-package com.codenguyenvu.helloworld.entity;
+package com.codenguyenvu.helloworld.usecase.entity;
 
 
 import jakarta.persistence.Column;
@@ -8,30 +8,37 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name = "loaihang")
+@Table(name = "loai_hang")
 public class LoaiHang {
 
     @Id
-    @Column(name = "maLoai", length = 5)
+    @Column(name = "ma_loai", length = 5)
     private String maLoai;
 
-    @Column(name = "tenLoai", length = 50)
+    @Column(name = "ten_loai", length = 50)
     private String tenLoai;
 
-    // getters and setters
+    public LoaiHang() {
+    }
+    public LoaiHang(String maLoai, String tenLoai) {
+        this.maLoai = maLoai;
+        this.tenLoai = tenLoai;
+    }
     public String getMaLoai() {
         return maLoai;
     }
-
     public void setMaLoai(String maLoai) {
         this.maLoai = maLoai;
     }
-
     public String getTenLoai() {
         return tenLoai;
     }
-
     public void setTenLoai(String tenLoai) {
         this.tenLoai = tenLoai;
     }
+    @Override
+    public String toString() {
+        return "LoaiHang [maLoai=" + maLoai + ", tenLoai=" + tenLoai + "]";
+    }
+    
 }
